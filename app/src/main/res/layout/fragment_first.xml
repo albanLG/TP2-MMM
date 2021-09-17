@@ -58,10 +58,10 @@
         <EditText
             android:id="@+id/editBirthCity"
             android:layout_width="150dp"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/city"
+            android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/editBirthDay"
             app:layout_constraintStart_toStartOf="@+id/editBirthDay"
             app:layout_constraintTop_toBottomOf="@+id/editLastName" />
@@ -69,10 +69,10 @@
         <EditText
             android:id="@+id/editLastName"
             android:layout_width="150dp"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/LastsName"
+            android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/editBirthCity"
             app:layout_constraintStart_toStartOf="@+id/editBirthCity"
             app:layout_constraintTop_toBottomOf="@+id/editFirstName" />
@@ -80,9 +80,10 @@
         <EditText
             android:id="@+id/editBirthDay"
             android:layout_width="150dp"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="date"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.9"
@@ -92,10 +93,10 @@
         <EditText
             android:id="@+id/editFirstName"
             android:layout_width="150dp"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/FirstName"
+            android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/editLastName"
             app:layout_constraintStart_toStartOf="@+id/editLastName"
             app:layout_constraintTop_toTopOf="parent" />

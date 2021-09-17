@@ -15,5 +15,6 @@
     <string name="FirstName">Prenom</string>
     <string name="BirthDay">Date de naissance</string>
     <string name="BirthCity">Ville de naissance</string>
+    <string name="city">Ville</string>
     <string name="Validate">Valider</string>
 </resources>

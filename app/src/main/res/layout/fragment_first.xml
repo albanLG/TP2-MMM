@@ -18,54 +18,60 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="233dp"
-        android:layout_height="208dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_Valid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256">
+        android:layout_width="409dp"
+        android:layout_height="377dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="305dp">
 
-        <TextView
-            android:id="@+id/text_DateNaissance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/BirthDay"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_VilleNaissance" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="133dp"
+            android:layout_height="187dp"
+            tools:layout_editor_absoluteX="15dp">
 
-        <TextView
-            android:id="@+id/text_Prenom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/FirstName"
-            app:layout_constraintBottom_toTopOf="@+id/text_Nom"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/text_DateNaissance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/BirthDay"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_VilleNaissance" />
 
-        <TextView
-            android:id="@+id/text_Nom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/LastsName"
-            app:layout_constraintBottom_toTopOf="@+id/text_VilleNaissance"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_Prenom" />
+            <TextView
+                android:id="@+id/text_Prenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FirstName"
+                app:layout_constraintBottom_toTopOf="@+id/text_Nom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/text_VilleNaissance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/BirthCity"
-            app:layout_constraintBottom_toTopOf="@+id/text_DateNaissance"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_Nom" />
+            <TextView
+                android:id="@+id/text_Nom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/LastsName"
+                app:layout_constraintBottom_toTopOf="@+id/text_VilleNaissance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_Prenom" />
+
+            <TextView
+                android:id="@+id/text_VilleNaissance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/BirthCity"
+                app:layout_constraintBottom_toTopOf="@+id/text_DateNaissance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_Nom" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

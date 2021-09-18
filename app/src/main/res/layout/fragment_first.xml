@@ -7,7 +7,7 @@
     tools:context=".FirstFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/userDataContainer"
         android:layout_width="293dp"
         android:layout_height="188dp"
         android:layout_centerVertical="true"
@@ -56,15 +56,15 @@
             app:layout_constraintTop_toTopOf="@+id/editBirthCity" />
 
         <EditText
-            android:id="@+id/editBirthCity"
+            android:id="@+id/editFirstName"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/editBirthDay"
-            app:layout_constraintStart_toStartOf="@+id/editBirthDay"
-            app:layout_constraintTop_toBottomOf="@+id/editLastName" />
+            app:layout_constraintBottom_toTopOf="@+id/editLastName"
+            app:layout_constraintStart_toStartOf="@+id/editLastName"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editLastName"
@@ -78,6 +78,17 @@
             app:layout_constraintTop_toBottomOf="@+id/editFirstName" />
 
         <EditText
+            android:id="@+id/editBirthCity"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBirthDay"
+            app:layout_constraintStart_toStartOf="@+id/editBirthDay"
+            app:layout_constraintTop_toBottomOf="@+id/editLastName" />
+
+        <EditText
             android:id="@+id/editBirthDay"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -89,17 +100,6 @@
             app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editBirthCity" />
-
-        <EditText
-            android:id="@+id/editFirstName"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/editLastName"
-            app:layout_constraintStart_toStartOf="@+id/editLastName"
-            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,4 +7,9 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/resetUserData"
+        android:orderInCategory="100"
+        android:title="@string/resetUserData"
+        app:showAsAction="never" />
 </menu>

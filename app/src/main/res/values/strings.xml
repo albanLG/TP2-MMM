@@ -16,4 +16,8 @@
     <string name="BirthDay">Date de naissance</string>
     <string name="BirthCity">Ville de naissance</string>
     <string name="Validate">Valider</string>
+    <string name="validateMSG">Vous avez saisi les informations suivantes :</string>
+
+    <!--Menu-->
+    <string name="resetUserData">Reset User Data</string>
 </resources>

@@ -7,10 +7,6 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.text.Editable;
-import android.view.View;
-
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,18 +17,12 @@ import com.example.tp1_mmm.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private NavController navController;
-    private FirstFragment firstFrag;
-
-    public void setFirstFrag(FirstFragment firstFrag) {
-        this.firstFrag = firstFrag;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,18 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         switch(id){
-            case R.id.resetUserData:
-                firstFrag.cleanDataUser();
-                return true;
-            case R.id.showPhoneNumber:
-                return true;
             default:
                 return true;
         }

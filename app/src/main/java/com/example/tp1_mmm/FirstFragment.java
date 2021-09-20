@@ -3,6 +3,9 @@ package com.example.tp1_mmm;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -26,17 +29,15 @@ public class FirstFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentFirstBinding.inflate(inflater, container, false);
+        setHasOptionsMenu(true);
         return binding.getRoot();
 
     }
 
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        MainActivity m=(MainActivity)getActivity();
-        m.setFirstFrag(this);
 
         binding.buttonValid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +57,25 @@ public class FirstFragment extends Fragment {
             }
         });
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu , MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_first_fragment , menu);
+        super.onCreateOptionsMenu(menu , inflater );
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch(id){
+            case R.id.resetUserData:
+                cleanDataUser();return true;
+            case R.id.showPhoneNumber:
+                cleanDataUser();return true;
+            default:
+                return false;
+        }
+    }
+
 
     public List<View> getUserData(){
         List<View> res=new ArrayList<>();

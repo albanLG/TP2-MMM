@@ -20,4 +20,5 @@
 
     <!--Menu-->
     <string name="resetUserData">Reset User Data</string>
+    <string name="showPhoneNumb">Show Phone Number</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.view.View;
 
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private NavController navController;
+    private FirstFragment firstFrag;
+
+    public void setFirstFrag(FirstFragment firstFrag) {
+        this.firstFrag = firstFrag;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +65,9 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch(id){
             case R.id.resetUserData:
-                //System.out.println(getSupportFragmentManager().findFragmentByTag("FirstFrag")==null);
-                System.out.println(getSupportFragmentManager().findFragmentById(R.id.FirstFragment)==null);
-                //FirstFragment frag=(FirstFragment)getSupportFragmentManager().findFragmentById(R.id.FirstFragment);
-                //List<Editable> userData=frag.getUserData();
+                firstFrag.cleanDataUser();
+                return true;
+            case R.id.showPhoneNumber:
                 return true;
             default:
                 return true;

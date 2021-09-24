@@ -1,5 +1,7 @@
 package com.example.tp1_mmm;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.LayoutInflater;
@@ -76,6 +78,11 @@ public class FirstFragment extends Fragment {
                 cleanDataUser();return true;
             case R.id.showPhoneNumber:
                 displayPhoneNumber();return true;
+            case R.id.wiki:
+                String url="https://fr.wikipedia.org/wiki/"+binding.editBirthCity.getText().toString();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+                return true;
             default:
                 return false;
         }

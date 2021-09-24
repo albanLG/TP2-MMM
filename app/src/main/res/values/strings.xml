@@ -23,5 +23,6 @@
     <!--Menu-->
     <string name="resetUserData">Reset User Data</string>
     <string name="showPhoneNumb">Show/Hide Phone Number</string>
+    <string name="wiki">Wikipedia</string>
 
 </resources>

@@ -17,8 +17,11 @@
     <string name="BirthCity">Ville de naissance</string>
     <string name="Validate">Valider</string>
     <string name="validateMSG">Vous avez saisi les informations suivantes :</string>
+    <string name="PhoneNum">Phone Number</string>
+    <string name="departmentBirth">Departement de Naissance</string>
 
     <!--Menu-->
     <string name="resetUserData">Reset User Data</string>
-    <string name="showPhoneNumb">Show Phone Number</string>
+    <string name="showPhoneNumb">Show/Hide Phone Number</string>
+
 </resources>

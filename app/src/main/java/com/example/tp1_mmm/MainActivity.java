@@ -47,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        //si je renvoie false, alors j execute onOptionsItemSelected sur le menu des fragments
         int id = item.getItemId();
         switch(id){
             default:
-                return true;
+                return false;
         }
     }
 

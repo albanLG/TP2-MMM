@@ -64,13 +64,14 @@ public class FirstFragment extends Fragment {
         super.onCreateOptionsMenu(menu , inflater );
     }
 
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch(id){
             case R.id.resetUserData:
                 cleanDataUser();return true;
             case R.id.showPhoneNumber:
-                cleanDataUser();return true;
+                displayPhoneNumber();return true;
             default:
                 return false;
         }
@@ -79,10 +80,22 @@ public class FirstFragment extends Fragment {
 
     public List<View> getUserData(){
         List<View> res=new ArrayList<>();
-        for(int i = 4; i < binding.userDataContainer.getChildCount(); i++) {
+        for(int i = 6; i < binding.userDataContainer.getChildCount()-1; i++) {//A MODIFIER
             res.add(binding.userDataContainer.getChildAt(i));
         }
         return res;
+    }
+
+    //Change Visibility state of phoneNumber
+    public void displayPhoneNumber(){
+        int phoneDisplayed=binding.editPhoneNum.getVisibility();
+        if(phoneDisplayed==0){//visible
+            binding.editPhoneNum.setVisibility(View.GONE);
+            binding.textPhoneNum.setVisibility(View.GONE);
+        }else{
+            binding.editPhoneNum.setVisibility(View.VISIBLE);
+            binding.textPhoneNum.setVisibility(View.VISIBLE);
+        }
     }
 
     public void cleanDataUser(){
@@ -100,4 +113,13 @@ public class FirstFragment extends Fragment {
         binding = null;
     }
 
+    /*
+    How I do interface style:
+    create contenair
+    fill it with your pairs (text, edit)
+    Vertical align pairs (should text items get this style)
+    Right align text items
+    Left align edit items
+    Create vertical chains on edit item
+    */
 }

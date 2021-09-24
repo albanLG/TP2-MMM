@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -46,10 +47,13 @@ public class FirstFragment extends Fragment {
                 List<View> l=getUserData();
 
                 for(View e : l) {
-                    EditText child = (EditText) e;
-                    String s=child.getText().toString();
-                    if(!s.equals("")){
-                        msg+="\n      "+s;
+                    if(e instanceof EditText) {
+                        EditText child = (EditText) e;
+                        String s = child.getText().toString();
+                        if (!s.equals("")) { msg += "\n      " + s; }
+                    }else if(e instanceof Spinner){
+                        Spinner s= (Spinner)e;
+                        msg+= "\n      "+s.getSelectedItem().toString();
                     }
                 }
                 Toast toast = Toast.makeText(getActivity().getApplicationContext(), msg, Toast.LENGTH_LONG);
@@ -80,7 +84,7 @@ public class FirstFragment extends Fragment {
 
     public List<View> getUserData(){
         List<View> res=new ArrayList<>();
-        for(int i = 6; i < binding.userDataContainer.getChildCount()-1; i++) {//A MODIFIER
+        for(int i = 6; i < binding.userDataContainer.getChildCount(); i++) {
             res.add(binding.userDataContainer.getChildAt(i));
         }
         return res;
@@ -102,8 +106,13 @@ public class FirstFragment extends Fragment {
         List<View> l=getUserData();
 
         for(View e : l) {
-            EditText child = (EditText) e;
-            child.setText("");
+            if(e instanceof EditText) {
+                EditText child = (EditText) e;
+                child.setText("");
+            }else if(e instanceof Spinner){
+                Spinner s= (Spinner)e;
+                s.setSelection(0);
+            }
         }
     }
 

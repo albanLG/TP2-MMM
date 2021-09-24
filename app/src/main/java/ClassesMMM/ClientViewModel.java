@@ -1,7 +1,9 @@
-package com.example.tp1_mmm;
+package ClassesMMM;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+
+import com.example.tp1_mmm.BR;
 
 public class ClientViewModel extends BaseObservable {
 

@@ -30,12 +30,6 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        EditText text = view . findViewById (R.id.text_Prenom );
-
-        String s = text . getText (). toString ();
-
-        Toast.makeText(getActivity().getApplicationContext(),
-                s, Toast.LENGTH_SHORT ).show();
 
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override

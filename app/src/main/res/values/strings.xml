@@ -25,4 +25,7 @@
     <string name="showPhoneNumb">Show/Hide Phone Number</string>
     <string name="wiki">Wikipedia</string>
 
+    <!-- Second Fragment-->
+    <string name="createClient">Nouveau Client</string>
+
 </resources>

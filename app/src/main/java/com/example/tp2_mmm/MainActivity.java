@@ -1,9 +1,6 @@
-package com.example.tp1_mmm;
+package com.example.tp2_mmm;
 
-import android.content.Context;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,11 +9,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.tp1_mmm.databinding.ActivityMainBinding;
+import com.example.tp2_mmm.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 
 
 public class MainActivity extends AppCompatActivity {

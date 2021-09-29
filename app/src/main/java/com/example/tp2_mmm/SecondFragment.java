@@ -1,4 +1,4 @@
-package com.example.tp1_mmm;
+package com.example.tp2_mmm;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.tp1_mmm.databinding.FragmentSecondBinding;
+import com.example.tp2_mmm.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
 

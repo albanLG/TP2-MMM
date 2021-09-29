@@ -1,4 +1,4 @@
-package com.example.tp1_mmm;
+package com.example.tp2_mmm;
 
 import org.junit.Test;
 

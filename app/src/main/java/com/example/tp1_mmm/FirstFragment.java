@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -32,9 +33,11 @@ public class FirstFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_first,container,false);
+       // binding = FragmentFirstBinding.inflate(inflater, container, false);
         setHasOptionsMenu(true);
-        return binding.getRoot();
+        View view = binding.getRoot();
+        return view;
 
     }
 

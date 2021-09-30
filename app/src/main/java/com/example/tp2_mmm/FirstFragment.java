@@ -54,22 +54,20 @@ public class FirstFragment extends Fragment {
         binding.buttonValid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // we get a reference on the view model of a client
-
-                ClientViewModel vm = binding.getViewModel();
-
-                Log.i("CLICK","CLIENT = " +vm.getClient().getPrenom()+" "+vm.getClient().getNom());
-
-                // we get a reference on the viewmodel of the ClientList
-
-                ClientListViewModel clvm = new ViewModelProvider(requireActivity()).get(ClientListViewModel.class);
-
-                // we extract the client and give it to the client list
-                clvm.insert(vm.getClient());
-
-                // and we move back to the first fragment
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                if(isClientValid()) {
+                    // we get a reference on the view model of a client
+                    ClientViewModel vm = binding.getViewModel();
+                    Log.i("CLICK", "CLIENT = " + vm.getClient().getPrenom() + " " + vm.getClient().getNom());
+                    // we get a reference on the viewmodel of the ClientList
+                    ClientListViewModel clvm = new ViewModelProvider(requireActivity()).get(ClientListViewModel.class);
+                    // we extract the client and give it to the client list
+                    clvm.insert(vm.getClient());
+                    // and we move back to the first fragment
+                    NavHostFragment.findNavController(FirstFragment.this)
+                            .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                }else{
+                    Toast.makeText(getActivity().getApplicationContext(),"Un client doit avoir au moins un nom et un prénom", Toast.LENGTH_SHORT ).show();
+                }
             }
         });
     }
@@ -99,7 +97,7 @@ public class FirstFragment extends Fragment {
     }
 
     public boolean isClientValid(){
-        return true;
+        return !binding.editFirstName.getText().toString().isEmpty() && !binding.editLastName.getText().toString().isEmpty();
     }
 
     public List<View> getUserData(){

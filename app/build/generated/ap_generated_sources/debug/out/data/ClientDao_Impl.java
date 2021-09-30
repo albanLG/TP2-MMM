@@ -270,20 +270,20 @@ public final class ClientDao_Impl implements ClientDao {
   }
 
   @Override
-  public Client findByName(final String first, final String last) {
+  public Client findByName(final String prenom, final String nom) {
     final String _sql = "SELECT * FROM client_table WHERE prenom LIKE ? AND nom LIKE ? LIMIT 1";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
-    if (first == null) {
+    if (prenom == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, first);
+      _statement.bindString(_argIndex, prenom);
     }
     _argIndex = 2;
-    if (last == null) {
+    if (nom == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, last);
+      _statement.bindString(_argIndex, nom);
     }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);

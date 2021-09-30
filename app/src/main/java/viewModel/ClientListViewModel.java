@@ -13,6 +13,7 @@ import data.BasicRepository;
 import data.Client;
 import data.ClientList;
 import data.IRepository;
+import data.RoomRepository;
 
 
 // This is the VIEWMODEL which interfaces with the list of clients (our MODEL)
@@ -42,10 +43,10 @@ public class ClientListViewModel extends AndroidViewModel {
             ClientList l = new ClientList();
             l.add(new Client("Bilal","Enki","02/02/2021","Paris","Ille et Vilaine (35)"));
             l.add(new Client("Bajram","Denis","02/02/2021","Angouleme","Ille et Vilaine (35)"));
-            repository = new BasicRepository(l);
+            //repository = new BasicRepository(l);
 
             // or use ROOM
-            //repository = new RoomRepository(application);
+            repository = new RoomRepository(application);
         }
 
         allClients = repository.getAllClients();

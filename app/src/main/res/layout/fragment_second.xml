@@ -9,15 +9,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/clients"
-        android:layout_width="236dp"
-        android:layout_height="417dp"
+        android:layout_width="400dp"
+        android:layout_height="521dp"
         android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toTopOf="@+id/createClient"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395"
-        tools:listitem="@layout/client_item"/>
+        app:layout_constraintVertical_bias="0.1"
+        tools:listitem="@layout/client_item" />
 
     <Button
         android:id="@+id/createClient"

@@ -10,7 +10,6 @@ public class BasicRepository  implements IRepository {
 
     private ClientList list;
 
-
     public BasicRepository(ClientList l) {
         list = l;
     }

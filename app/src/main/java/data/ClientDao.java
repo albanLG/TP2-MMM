@@ -18,9 +18,9 @@ public interface ClientDao {
     LiveData<List<Client>> loadAllByIds(int[] userIds);
 
 
-    @Query("SELECT * FROM client_table WHERE prenom LIKE :first AND " +
-            "nom LIKE :last LIMIT 1")
-    Client findByName(String first, String last);
+    @Query("SELECT * FROM client_table WHERE prenom LIKE :prenom AND " +
+            "nom LIKE :nom LIMIT 1")
+    Client findByName(String prenom, String nom);
 
     @Insert
     void insertAll(Client... clients);

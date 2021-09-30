@@ -64,7 +64,7 @@ NavHostFragment.findNavController(SecondFragment.this)
 
         viewModel = new ViewModelProvider(requireActivity()).get(ClientListViewModel.class);
 
-
+        //viewModel = ViewModelProvider.of(this).get(viewModel.class);
         // et on ajoute un observer sur les clients...
         viewModel.getAllUsers().observe(getViewLifecycleOwner(), new Observer<List<Client>>() {
             @Override
@@ -83,7 +83,6 @@ NavHostFragment.findNavController(SecondFragment.this)
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 viewModel.delete(adapter.getClientAt(viewHolder.getAdapterPosition()));
-                // notification...
             }
         }).attachToRecyclerView(recyclerView);
 

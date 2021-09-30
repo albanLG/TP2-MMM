@@ -3,6 +3,7 @@ package com.example.tp2_mmm;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,11 +17,17 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.tp2_mmm.databinding.FragmentFirstBinding;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import data.Client;
+import viewModel.ClientListViewModel;
+import viewModel.ClientViewModel;
 
 public class FirstFragment extends Fragment {
 
@@ -33,6 +40,7 @@ public class FirstFragment extends Fragment {
     ) {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_first,container,false);
        // binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding.setViewModel(new ClientViewModel(new Client("","","","","")));
         setHasOptionsMenu(true);
         View view = binding.getRoot();
         return view;
@@ -46,6 +54,23 @@ public class FirstFragment extends Fragment {
         binding.buttonValid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // we get a reference on the view model of a client
+
+                ClientViewModel vm = binding.getViewModel();
+
+                Log.i("CLICK","CLIENT = " +vm.getClient().getPrenom()+" "+vm.getClient().getNom());
+
+                // we get a reference on the viewmodel of the ClientList
+
+                ClientListViewModel clvm = new ViewModelProvider(requireActivity()).get(ClientListViewModel.class);
+
+                // we extract the client and give it to the client list
+                clvm.insert(vm.getClient());
+
+                // and we move back to the first fragment
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                /**
                 String msg=getResources().getString(R.string.validateMSG);
                 List<View> l=getUserData();
 
@@ -61,6 +86,7 @@ public class FirstFragment extends Fragment {
                 }
                 Toast toast = Toast.makeText(getActivity().getApplicationContext(), msg, Toast.LENGTH_LONG);
                 toast.show();
+                 **/
             }
         });
     }

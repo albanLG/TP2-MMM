@@ -1,6 +1,5 @@
-package ClassesMMM;
+package data;
 
-import android.app.Application;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 

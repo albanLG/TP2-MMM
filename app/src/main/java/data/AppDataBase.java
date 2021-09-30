@@ -1,4 +1,4 @@
-package ClassesMMM;
+package data;
 
 
 import android.content.Context;
@@ -47,8 +47,8 @@ public abstract class AppDataBase extends RoomDatabase {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            Client u1 = new Client("Bilal","Enki","03/02/2021","Paris");
-            Client u2 = new Client("Denis","Bajram", "03/02/2021","Angouleme");
+            Client u1 = new Client("Bilal","Enki","03/02/2021","Paris","Ille et Vilaine (35)");
+            Client u2 = new Client("Denis","Bajram", "03/02/2021","Angouleme","Ille et Vilaine (35)");
 
             clientDao.insert(u1);
             clientDao.insert(u2);

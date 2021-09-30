@@ -1,4 +1,4 @@
-package ClassesMMM;
+package viewModel;
 
 import android.app.Application;
 
@@ -7,9 +7,12 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import ClassesMMM.*;
-
 import java.util.List;
+
+import data.BasicRepository;
+import data.Client;
+import data.ClientList;
+import data.IRepository;
 
 
 // This is the VIEWMODEL which interfaces with the list of clients (our MODEL)
@@ -37,8 +40,8 @@ public class ClientListViewModel extends AndroidViewModel {
         if (!isIntialized()) {
 
             ClientList l = new ClientList();
-            l.add(new Client("Bilal","Enki","02/02/2021","Paris"));
-            l.add(new Client("Bajram","Denis","02/02/2021","Angouleme"));
+            l.add(new Client("Bilal","Enki","02/02/2021","Paris","Ille et Vilaine (35)"));
+            l.add(new Client("Bajram","Denis","02/02/2021","Angouleme","Ille et Vilaine (35)"));
             repository = new BasicRepository(l);
 
             // or use ROOM

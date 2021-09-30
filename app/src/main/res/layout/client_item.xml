@@ -17,11 +17,12 @@
 
         <TextView
             android:id="@+id/prenom"
-            android:layout_width="170dp"
-            android:layout_height="102dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Prenom"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintBottom_toTopOf="@+id/villeNaissance"
+            app:layout_constraintBottom_toTopOf="@+id/birthday"
+            app:layout_constraintEnd_toStartOf="@+id/nom"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,25 +30,11 @@
             android:id="@+id/nom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="72dp"
             android:text="Nom"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintBottom_toBottomOf="@+id/prenom"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/prenom" />
-
-        <TextView
-            android:id="@+id/villeNaissance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ville De Naissance"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.607"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.506" />
 
         <TextView
             android:id="@+id/birthday"
@@ -55,11 +42,17 @@
             android:layout_height="wrap_content"
             android:text="Birthday"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.506" />
+            app:layout_constraintEnd_toEndOf="@+id/prenom"
+            app:layout_constraintStart_toStartOf="@+id/prenom" />
+
+        <TextView
+            android:id="@+id/villeNaissance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ville De Naissance"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/nom"
+            app:layout_constraintStart_toStartOf="@+id/nom" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

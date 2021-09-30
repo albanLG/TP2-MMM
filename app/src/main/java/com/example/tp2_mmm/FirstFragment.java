@@ -70,23 +70,6 @@ public class FirstFragment extends Fragment {
                 // and we move back to the first fragment
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
-                /**
-                String msg=getResources().getString(R.string.validateMSG);
-                List<View> l=getUserData();
-
-                for(View e : l) {
-                    if(e instanceof EditText) {
-                        EditText child = (EditText) e;
-                        String s = child.getText().toString();
-                        if (!s.equals("")) { msg += "\n      " + s; }
-                    }else if(e instanceof Spinner){
-                        Spinner s= (Spinner)e;
-                        msg+= "\n      "+s.getSelectedItem().toString();
-                    }
-                }
-                Toast toast = Toast.makeText(getActivity().getApplicationContext(), msg, Toast.LENGTH_LONG);
-                toast.show();
-                 **/
             }
         });
     }
@@ -115,6 +98,9 @@ public class FirstFragment extends Fragment {
         }
     }
 
+    public boolean isClientValid(){
+        return true;
+    }
 
     public List<View> getUserData(){
         List<View> res=new ArrayList<>();

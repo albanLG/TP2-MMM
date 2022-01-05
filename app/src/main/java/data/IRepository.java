@@ -2,6 +2,8 @@ package data;
 
 import androidx.lifecycle.LiveData;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.List;
 
 // a simple interface to the data

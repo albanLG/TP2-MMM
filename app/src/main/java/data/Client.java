@@ -12,6 +12,10 @@ public class Client {
 
      private String departement;
 
+     public Client(){
+
+     }
+
      public Client(String prenom, String nom, String birthday, String villeNaissance, String departement) {
           this.prenom = prenom;
           this.nom = nom;

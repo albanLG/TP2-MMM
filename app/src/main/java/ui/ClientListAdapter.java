@@ -25,7 +25,6 @@ import javax.crypto.Cipher;
 public class ClientListAdapter extends RecyclerView.Adapter<ClientListAdapter.ClientHolder> {
     private List<Client> clients = new ArrayList<>();
 
-
     @NonNull
     @Override
     public ClientHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

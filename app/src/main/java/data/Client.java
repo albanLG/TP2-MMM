@@ -1,27 +1,15 @@
 package data;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
-@Entity(tableName = "client_table")
 public class Client {
-     @PrimaryKey(autoGenerate = true)
-     public int uid;
 
-     @ColumnInfo(name = "prenom")
      private String prenom;
 
-     @ColumnInfo(name = "nom")
      private String nom;
 
-     @ColumnInfo(name = "birthday")
      private String birthday;
 
-     @ColumnInfo(name = "villeNaissance")
      private String villeNaissance;
 
-     @ColumnInfo(name = "departement")
      private String departement;
 
      public Client(String prenom, String nom, String birthday, String villeNaissance, String departement) {

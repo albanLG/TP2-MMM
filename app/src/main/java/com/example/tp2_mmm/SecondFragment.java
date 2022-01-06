@@ -23,12 +23,10 @@ import java.util.List;
 
 import data.Client;
 import ui.ClientListAdapter;
-import viewModel.ClientListViewModel;
 
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
-    private ClientListViewModel viewModel;
 
 
     @Override
@@ -62,16 +60,7 @@ NavHostFragment.findNavController(SecondFragment.this)
 
         // on crée une instance de notre ViewModel
 
-        viewModel = new ViewModelProvider(requireActivity()).get(ClientListViewModel.class);
 
-        //viewModel = ViewModelProvider.of(this).get(viewModel.class);
-        // et on ajoute un observer sur les clients...
-        viewModel.getAllUsers().observe(getViewLifecycleOwner(), new Observer<List<Client>>() {
-            @Override
-            public void onChanged(@Nullable List<Client> clients) {
-                adapter.setClients(clients);
-            }
-        });
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -82,7 +71,6 @@ NavHostFragment.findNavController(SecondFragment.this)
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                viewModel.delete(adapter.getClientAt(viewHolder.getAdapterPosition()));
             }
         }).attachToRecyclerView(recyclerView);
 

@@ -10,16 +10,11 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.tp2_mmm.databinding.ActivityMainBinding;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import android.view.Menu;
 import android.view.MenuItem;
-
-import data.AppDataBase;
 
 
 public class MainActivity extends AppCompatActivity {

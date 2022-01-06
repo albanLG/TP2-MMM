@@ -26,8 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import data.Client;
-import viewModel.ClientListViewModel;
-import viewModel.ClientViewModel;
+import data.DAOClient;
+
 
 public class FirstFragment extends Fragment {
 
@@ -40,7 +40,6 @@ public class FirstFragment extends Fragment {
     ) {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_first,container,false);
        // binding = FragmentFirstBinding.inflate(inflater, container, false);
-        binding.setViewModel(new ClientViewModel(new Client("","","","","")));
         setHasOptionsMenu(true);
         View view = binding.getRoot();
         return view;
@@ -50,18 +49,17 @@ public class FirstFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        DAOClient daoClient = new DAOClient();
 
         binding.buttonValid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(isClientValid()) {
                     // we get a reference on the view model of a client
-                    ClientViewModel vm = binding.getViewModel();
-                    Log.i("CLICK", "CLIENT = " + vm.getClient().getPrenom() + " " + vm.getClient().getNom());
+                    Client client = new Client(binding.editFirstName.getText().toString(),binding.editLastName.getText().toString(),binding.editBirthDay.getText().toString(),binding.editBirthCity.getText().toString(),binding.spinnerDepartmentBirth.getSelectedItem().toString());
+                    daoClient.insertClient(client);
                     // we get a reference on the viewmodel of the ClientList
-                    ClientListViewModel clvm = new ViewModelProvider(requireActivity()).get(ClientListViewModel.class);
                     // we extract the client and give it to the client list
-                    clvm.insert(vm.getClient());
                     // and we move back to the first fragment
                     NavHostFragment.findNavController(FirstFragment.this)
                             .navigate(R.id.action_FirstFragment_to_SecondFragment);
